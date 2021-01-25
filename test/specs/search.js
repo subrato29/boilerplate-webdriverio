@@ -1,16 +1,15 @@
 'use strict';
 
-const searchPage = require('../../test/pageobjects/searchPage.js');
-const data = require('../../data/data.js');
-const urls = require('../../config/urls.js');
+import searchPage from '../../test/pageobjects/searchPage';
+import data from '../../data/data';
 
 describe('eBay product search: ', () => {
 
     beforeEach(() => {
-        browser.url(urls.baseURL);
+        searchPage.open();
     });
 
-    it('Validation of search box: ', () => {
+    it('Validation of search box: ', () => {       
         searchPage.set_value_to_search_box(data.search.product_to_search);
         searchPage.click_btn_search();
     });

@@ -1,6 +1,14 @@
 'use strict';
 
-class SearchPage  {
+import basePage from './basePage';
+import urls from '../../config/urls';
+
+class SearchPage extends basePage{
+
+    open() {
+        super.open(urls.baseURL);
+    };
+
     set_value_to_search_box(value) {
         const locator = '//input[@placeholder = \'Search for anything\']';
         const element = $(locator);
@@ -22,4 +30,4 @@ class SearchPage  {
     };
 }
 
-module.exports = new SearchPage();
+export default new SearchPage();
