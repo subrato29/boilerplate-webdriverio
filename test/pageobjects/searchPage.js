@@ -9,6 +9,10 @@ class SearchPage extends basePage{
         super.open(urls.baseURL);
     };
 
+    tearDown() {
+        super.tearDown('https://www.ebay.com/');
+    }
+
     set_value_to_search_box(value) {
         const locator = '//input[@placeholder = \'Search for anything\']';
         const element = $(locator);
