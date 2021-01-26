@@ -12,5 +12,37 @@ module.exports = {
             array.push(element.getText());
         });
         return array;
+    },
+
+    /**
+     * @function pause
+     * @param {Integer} timeout 
+     */
+    pause: function(timeout) {
+        browser.pause(timeout);
+    },
+
+    /**
+     * @function waitForDisplayed
+     * @param {string} locator 
+     * @param {Integer} timeout 
+     */
+    waitForDisplayed: function(locator, timeout) {
+        $(locator).waitForDisplayed({timeout});
+    },
+
+    /**
+     * @function waitUntilTextChange
+     * @param {string} locator 
+     * @param {string} text 
+     * @param {Integer} timeout 
+     */
+    waitUntilTextChange: function(locator, text, timeout) {
+        browser.waitUntil(() => {
+            return $(locator).getText() === text;
+        }, {
+            timeout,
+            timeoutMsg: 'Timeout for the locator: ' + locator
+        });
     }
 }
