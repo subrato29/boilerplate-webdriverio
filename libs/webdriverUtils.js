@@ -44,5 +44,16 @@ module.exports = {
             timeout,
             timeoutMsg: 'Timeout for the locator: ' + locator
         });
+    },
+
+    /**
+     * @function waitAndClick
+     * @param {string} locator 
+     * @param {Integer} timeout 
+     */
+    waitAndClick: function(locator, timeout) {
+        const element = $(locator);
+        element.waitForDisplayed({timeout});
+        element.click();
     }
 }

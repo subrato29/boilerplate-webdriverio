@@ -20,7 +20,7 @@ describe('eBay product search: ', () => {
 
     it('Clicking classics after hovering on motor: ', () => {
         searchPage.hover_motors();
-        webdriverUtils.waitForDisplayed(searchPage.get_locator_classics(), 1000);
+        webdriverUtils.waitForDisplayed(searchPage.get_locator_classics(), 2000);
         searchPage.click_classic_hovering_motors();
         webdriverUtils.waitUntilTextChange(searchPage.get_locator_classic_car_page_header(),
         'Classic Cars', 2000);
