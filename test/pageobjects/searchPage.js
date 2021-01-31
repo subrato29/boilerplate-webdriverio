@@ -73,7 +73,11 @@ class SearchPage extends basePage{
         } else {
             throw new Error(locator + ' element is not present in DOM search page');
         }
-    }
+    };
+
+    get_list_of_elements_all_categories() {
+        return '//select[@aria-label = \'Select a category for search\']/option';
+    };
 }
 
 export default new SearchPage();

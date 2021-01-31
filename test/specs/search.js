@@ -24,7 +24,12 @@ describe('eBay product search: ', () => {
         searchPage.click_classic_hovering_motors();
         webdriverUtils.waitUntilTextChange(searchPage.get_locator_classic_car_page_header(),
         'Classic Cars', 2000);
-    })
+    });
+
+    it('Verifying select All categories: ', () => {
+        let list = webdriverUtils.findElements(searchPage.get_list_of_elements_all_categories());
+        expect(list).to.deep.equal(data.all_cat);
+    });
 
     afterEach(() => {
         searchPage.tearDown();
