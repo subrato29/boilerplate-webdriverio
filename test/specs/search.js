@@ -31,6 +31,13 @@ describe('eBay product search: ', () => {
         expect(list).to.deep.equal(data.all_cat);
     });
 
+    it('Verify category selected correctly reflected in page: ', () => {
+        searchPage.select_category(data.category_selected);
+        searchPage.click_btn_search();
+        webdriverUtils.waitUntilTextChange('//h1[contains(@class, \'b-pageheader\')]', 
+        data.category_selected, 3000);
+    });
+
     afterEach(() => {
         searchPage.tearDown();
     });

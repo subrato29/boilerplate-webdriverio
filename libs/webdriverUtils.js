@@ -42,7 +42,7 @@ module.exports = {
             return $(locator).getText() === text;
         }, {
             timeout,
-            timeoutMsg: 'Timeout for the locator: ' + locator
+            timeoutMsg: 'Timeout for the locator: ' + locator + ' where the text is: ' + text
         });
     },
 

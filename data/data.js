@@ -53,5 +53,6 @@ module.exports = {
         'Travel',
         'Video Games & Consoles',
         'Everything Else'
-      ]
+      ],
+      category_selected: 'Real Estate'
 }
