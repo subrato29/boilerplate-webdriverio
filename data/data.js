@@ -54,5 +54,10 @@ module.exports = {
         'Video Games & Consoles',
         'Everything Else'
       ],
-      category_selected: 'Real Estate'
+      category_selected: 'Real Estate',
+      checkout: {
+          item_no: '151744607899',
+          item_quantity: 1,
+          price: 228
+      }
 }

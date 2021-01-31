@@ -4,32 +4,31 @@ import basePage from './basePage';
 import urls from '../../config/urls';
 
 class SearchPage extends basePage{
-
     open() {
         super.open(urls.baseURL);
     };
 
     tearDown() {
-        super.tearDown('https://www.ebay.com/');
+        super.tearDown(urls.baseURL);
     }
 
     set_value_to_search_box(value) {
-        const locator = '//input[@placeholder = \'Search for anything\']';
+        const locator = super.search();
         const element = $(locator);
         if (element.isDisplayed()) {
             element.setValue(value);
         } else {
-            throw new Error(locator + ' element is not present in DOM search page');
+            super.throw_common_err(locator);
         }
     };
 
     click_btn_search() {
-        const locator = '//input[@value = \'Search\']';
+        const locator = super.btn_search();
         const element = $(locator);
         if (element.isDisplayed()) {
             element.click();
         } else {
-            throw new Error(locator + ' element is not present in DOM search page');
+            super.throw_common_err(locator);
         }
     };
 
@@ -43,7 +42,7 @@ class SearchPage extends basePage{
         if(element.isDisplayed()) {
             element.moveTo();
         } else {
-            throw new Error(locator + ' element is not present in DOM search page');
+            super.throw_common_err(locator);
         }
     };
 
@@ -57,7 +56,7 @@ class SearchPage extends basePage{
         if (element.isDisplayed()) {
             element.click();
         } else {
-            throw new Error(locator + ' element is not present in DOM search page');
+            super.throw_common_err(locator);
         }
     };
 
@@ -71,7 +70,7 @@ class SearchPage extends basePage{
         if (element.isDisplayed()) {
             return element.getText();
         } else {
-            throw new Error(locator + ' element is not present in DOM search page');
+            super.throw_common_err(locator);
         }
     };
 
@@ -85,7 +84,7 @@ class SearchPage extends basePage{
         if (element.isDisplayed()) {
             element.selectByVisibleText(value); 
         } else {
-            throw new Error(locator + ' element is not present in DOM search page');
+            super.throw_common_err(locator);
         }
     };
 }

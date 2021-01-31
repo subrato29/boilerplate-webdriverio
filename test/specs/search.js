@@ -6,7 +6,6 @@ import webdriverUtils from '../../libs/webdriverUtils';
 import { expect } from 'chai';
 
 describe('eBay product search: ', () => {
-
     beforeEach(() => {
         searchPage.open();
     });
