@@ -40,6 +40,6 @@ npm install
 Running the tests:
 -------------------
 ```
-Running script without gerenarting html report- 'npx wdio wdio.conf.js' or 'npx wdio'
+Running script without gerenarting html report- 'npx wdio' or 'npm run test'
 
 ```
