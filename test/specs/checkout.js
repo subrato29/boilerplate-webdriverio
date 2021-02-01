@@ -37,7 +37,13 @@ describe('Add to cart and Checkout flow: ', () => {
         webdriverUtils.waitAndClick(pdtDetailPage.get_btn_continue_as_guest());
         actual_tot_item_price = genericUtils.getPrice(shoppingCartPage.get_order_total(), '$');
         expect(expected_tot_item_price).to.be.equal(actual_tot_item_price);
-    })
+    });
+
+    it('Remove item from shopping cart page: ', () => {
+        shoppingCartPage.open();
+        shoppingCartPage.click_btn_remove();
+        webdriverUtils.waitForDisplayed(shoppingCartPage.get_no_item_in_cart());
+    });
 
     afterEach(() => {
         pdtSearchResultPage.tearDown();
