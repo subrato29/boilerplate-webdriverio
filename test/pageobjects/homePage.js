@@ -3,7 +3,7 @@
 import basePage from './basePage';
 import urls from '../../config/urls';
 
-class SearchPage extends basePage{
+class HomePage extends basePage{
     open() {
         super.open(urls.baseURL);
     };
@@ -89,4 +89,4 @@ class SearchPage extends basePage{
     };
 }
 
-export default new SearchPage();
+export default new HomePage();

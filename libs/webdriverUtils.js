@@ -55,5 +55,6 @@ module.exports = {
         const element = $(locator);
         element.waitForDisplayed({timeout});
         element.click();
+        element.click();
     }
 }
