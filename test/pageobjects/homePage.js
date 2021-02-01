@@ -12,6 +12,22 @@ class HomePage extends basePage{
         super.tearDown(urls.baseURL);
     }
 
+    get_locator_for_category_list() {
+        return '//h3[text() = \'Category\']/../..//li//li[@data-scope = \'PRIMARY\']';
+    };
+
+    get_locator_classics() {
+        return '//a[text() = \'Classics\']';
+    };
+
+    get_list_of_elements_all_categories() {
+        return '//select[@aria-label = \'Select a category for search\']/option';
+    };
+
+    get_locator_classic_car_page_header () {
+        return '//h1/span[text() = \'Classic Cars\']';
+    };
+
     set_value_to_search_box(value) {
         const locator = super.search();
         const element = $(locator);
@@ -32,10 +48,6 @@ class HomePage extends basePage{
         }
     };
 
-    get_locator_for_category_list() {
-        return '//h3[text() = \'Category\']/../..//li//li[@data-scope = \'PRIMARY\']';
-    };
-
     hover_motors() {
         const locator = '//span[text() = \'Home\']/../..//li/a[text() = \'Motors\']'
         const element = $(locator);
@@ -44,10 +56,6 @@ class HomePage extends basePage{
         } else {
             super.throw_common_err(locator);
         }
-    };
-
-    get_locator_classics() {
-        return '//a[text() = \'Classics\']';
     };
 
     click_classic_hovering_motors() {
@@ -60,10 +68,6 @@ class HomePage extends basePage{
         }
     };
 
-    get_locator_classic_car_page_header () {
-        return '//h1/span[text() = \'Classic Cars\']';
-    };
-
     get_text_classic_car() {
         const locator = this.get_locator_classic_car_page_header();
         const element = $(locator);
@@ -72,10 +76,6 @@ class HomePage extends basePage{
         } else {
             super.throw_common_err(locator);
         }
-    };
-
-    get_list_of_elements_all_categories() {
-        return '//select[@aria-label = \'Select a category for search\']/option';
     };
 
     select_category(value) {

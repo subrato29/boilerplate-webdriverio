@@ -68,7 +68,33 @@ class ActionsForWeb extends basePage{
         } else {
             super.throw_common_err(locator);
         }
-    }
+    };
+
+    /**
+     * @function moveTo
+     * @param {string} locator
+     */
+    moveTo(locator) {
+        const element = $(locator);
+        if(element.isDisplayed()) {
+            element.moveTo();
+        } else {
+            super.throw_common_err(locator);
+        }
+    };
+
+    /**
+     * @function getText
+     * @param {string} locator
+     */
+    getText(locator) {
+        const element = $(locator);
+        if(element.isDisplayed()) {
+            return element.getText();
+        } else {
+            super.throw_common_err(locator);
+        }
+    };
 }
 
 export default new ActionsForWeb();

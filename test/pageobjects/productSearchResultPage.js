@@ -13,6 +13,14 @@ class ProductSearchResultPage extends basePage {
         super.tearDown(urls.baseURL);
     };
 
+    get_search_result() {
+        return '//h1[contains(text(), \'result for\')]/span[1]';
+    };
+
+    get_product_title() {
+        return '//div[@class = \'srp-river-results clearfix\']//h3[@class = \'s-item__title\']/..';
+    };
+
     set_item_no(value) {
         const locator = super.search();
         const element = $(locator);
@@ -21,14 +29,6 @@ class ProductSearchResultPage extends basePage {
         } else {
             super.throw_common_err(locator);
         }
-    };
-
-    get_search_result() {
-        return '//h1[contains(text(), \'result for\')]/span[1]';
-    };
-
-    get_product_title() {
-        return '//div[@class = \'srp-river-results clearfix\']//h3[@class = \'s-item__title\']/..';
     };
 
     click_product_title() {

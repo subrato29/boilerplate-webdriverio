@@ -3,7 +3,11 @@
 let genericUtils = {
 	getArray: function(string, separator) {
         return string.split(separator);
-    },
+	},
+	
+	getPrice: function(string, separator) {
+		return parseFloat(string.split(separator)[1]);
+	},
 
     generateRandomNumber: function (length) {
     	return Math.floor(Math.pow(10, length-1) + Math.random() * (Math.pow(10, length) - Math.pow(10, length-1) - 1));

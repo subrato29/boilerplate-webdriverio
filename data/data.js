@@ -58,6 +58,6 @@ module.exports = {
       checkout: {
           item_no: '151744607899',
           item_quantity: 3,
-          price: 228
+          item_price: 228
       }
 }
