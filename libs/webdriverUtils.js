@@ -27,7 +27,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitForDisplayed: function(locator, timeout) {
+    waitForDisplayed: function(locator, timeout = 5000) {
         $(locator).waitForDisplayed({timeout});
     },
 
@@ -37,7 +37,7 @@ module.exports = {
      * @param {string} text 
      * @param {Integer} timeout 
      */
-    waitUntilTextChange: function(locator, text, timeout) {
+    waitUntilTextChange: function(locator, text, timeout = 5000) {
         browser.waitUntil(() => {
             return $(locator).getText() === text;
         }, {
@@ -51,7 +51,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitAndClick: function(locator, timeout) {
+    waitAndClick: function(locator, timeout = 5000) {
         const element = $(locator);
         element.waitForDisplayed({timeout});
         element.click();

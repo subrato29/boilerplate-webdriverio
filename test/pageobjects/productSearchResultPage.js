@@ -21,6 +21,10 @@ class ProductSearchResultPage extends basePage {
         return '//div[@class = \'srp-river-results clearfix\']//h3[@class = \'s-item__title\']/..';
     };
 
+    get_no_exact_match_found() {
+        return '//h3[text() = \'No exact matches found\']';
+    };
+
     set_item_no(value) {
         const locator = super.search();
         const element = $(locator);
@@ -34,7 +38,7 @@ class ProductSearchResultPage extends basePage {
     click_product_title() {
         const locator = this.get_product_title();
         actions.doubleClick(locator);
-    }
+    };
 
 }
 

@@ -17,24 +17,24 @@ describe('Add to cart and Checkout flow: ', () => {
     it('Validating a single search item by one item no: ', () => {
         pdtSearchResultPage.set_item_no(data.checkout.item_no);
         homePage.click_btn_search();
-        webdriverUtils.waitUntilTextChange(pdtSearchResultPage.get_search_result(), '1', 4000);
+        webdriverUtils.waitUntilTextChange(pdtSearchResultPage.get_search_result(), '1');
     });
 
     it('Validating a checkout flow: ', () => {
         let expected_tot_item_price = (data.checkout.item_price) * (data.checkout.item_quantity);
         pdtSearchResultPage.set_item_no(data.checkout.item_no);
         homePage.click_btn_search();
-        webdriverUtils.waitForDisplayed(pdtSearchResultPage.get_product_title(), 6000)
+        webdriverUtils.waitForDisplayed(pdtSearchResultPage.get_product_title())
         pdtSearchResultPage.click_product_title();
-        webdriverUtils.waitForDisplayed(pdtDetailPage.get_quantity(), 5000);
+        webdriverUtils.waitForDisplayed(pdtDetailPage.get_quantity());
         pdtDetailPage.set_quantity(data.checkout.item_quantity);
         pdtDetailPage.click_add_to_cart();
         pdtDetailPage.click_no_thanks();
-        webdriverUtils.waitForDisplayed(pdtDetailPage.get_price_locator(), 6000);
+        webdriverUtils.waitForDisplayed(pdtDetailPage.get_price_locator());
         let actual_tot_item_price = genericUtils.getPrice(pdtDetailPage.get_item_price(), '$');
         expect(expected_tot_item_price).to.be.equal(actual_tot_item_price);
         pdtDetailPage.click_btn_checkout();
-        webdriverUtils.waitAndClick(pdtDetailPage.get_btn_continue_as_guest(), 6000);
+        webdriverUtils.waitAndClick(pdtDetailPage.get_btn_continue_as_guest());
         actual_tot_item_price = genericUtils.getPrice(shoppingCartPage.get_order_total(), '$');
         expect(expected_tot_item_price).to.be.equal(actual_tot_item_price);
     })

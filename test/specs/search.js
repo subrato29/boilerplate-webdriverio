@@ -1,6 +1,7 @@
 'use strict';
 
 import homePage from '../../test/pageobjects/homePage';
+import pdtSearchResultPage from '../pageobjects/productSearchResultPage';
 import data from '../../data/data';
 import webdriverUtils from '../../libs/webdriverUtils';
 import { expect } from 'chai';
@@ -19,7 +20,7 @@ describe('eBay product search: ', () => {
 
     it('Clicking classics after hovering on motor: ', () => {
         homePage.hover_motors();
-        webdriverUtils.waitForDisplayed(homePage.get_locator_classics(), 2000);
+        webdriverUtils.waitForDisplayed(homePage.get_locator_classics());
         homePage.click_classic_hovering_motors();
         webdriverUtils.waitUntilTextChange(homePage.get_locator_classic_car_page_header(),
         'Classic Cars', 2000);
@@ -35,6 +36,12 @@ describe('eBay product search: ', () => {
         homePage.click_btn_search();
         webdriverUtils.waitUntilTextChange('//h1[contains(@class, \'b-pageheader\')]', 
         data.category_selected, 3000);
+    });
+
+    it('Verify non searchable item: ', () => {
+        homePage.set_value_to_search_box('ahgdhagdh');
+        homePage.click_btn_search();
+        webdriverUtils.waitForDisplayed(pdtSearchResultPage.get_no_exact_match_found());
     });
 
     afterEach(() => {
