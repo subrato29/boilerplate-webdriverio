@@ -25,6 +25,22 @@ class ProductSearchResultPage extends basePage {
         return '//h3[text() = \'No exact matches found\']';
     };
 
+    get_save_this_search() {
+        return '//span[text() = \'Save this search\']/..';
+    };
+
+    get_saved_locator() {
+        return '//span[text() = \'Saved\']/..';
+    };
+
+    get_btn_best_match() {
+        return '//button[contains(@aria-label, \'Best Match selected\')]';
+    };
+
+    get_best_match_list() {
+        return '//a/span[text() = \'Best Match\']/../..//span';
+    };
+
     set_item_no(value) {
         const locator = super.search();
         const element = $(locator);
@@ -39,6 +55,11 @@ class ProductSearchResultPage extends basePage {
         const locator = this.get_product_title();
         actions.doubleClick(locator);
     };
+
+    click_btn_best_match() {
+        const locator = this.get_btn_best_match();
+        actions.click(locator);
+    }
 
 }
 

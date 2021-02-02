@@ -59,5 +59,13 @@ module.exports = {
           item_no: '151744607899',
           item_quantity: 3,
           item_price: 228
-      }
+      },
+      best_match_types: [
+        'Best Match',
+        'Time: ending soonest',
+        'Time: newly listed',
+        'Price + Shipping: lowest first',
+        'Price + Shipping: highest first',
+        'Distance: nearest first'
+      ]
 }

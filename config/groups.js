@@ -6,6 +6,6 @@ module.exports = {
     specs: [
         //'./test/specs/**/*.js',
          './test/specs/search.js',
-         './test/specs/checkout.js',
+         './test/specs/checkout.js'
     ]
 }

@@ -44,6 +44,15 @@ describe('eBay product search: ', () => {
         webdriverUtils.waitForDisplayed(pdtSearchResultPage.get_no_exact_match_found());
     });
 
+    it('Verifying best match: ', () => {
+        homePage.set_value_to_search_box(data.search.product_to_search);
+        homePage.click_btn_search();
+        pdtSearchResultPage.click_btn_best_match();
+        let list = webdriverUtils.findElements(pdtSearchResultPage.get_best_match_list());
+        console.log(list);
+        expect(list).to.deep.equal(data.best_match_types);
+    });
+
     afterEach(() => {
         homePage.tearDown();
     });
