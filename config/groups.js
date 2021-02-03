@@ -1,7 +1,5 @@
 'use strict';
 
-const { checkout } = require("../data/data");
-
 module.exports = {
     specs: [
         //'./test/specs/**/*.js',
