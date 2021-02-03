@@ -71,6 +71,21 @@ class ActionsForWeb extends basePage{
     };
 
     /**
+     * @function selectByAttribute
+     * @param {string} locator 
+     * @param {string} attribute
+     * @param {string} value
+     */
+    selectByAttribute(locator, attribute, value) {
+        const element = $(locator);
+        if (element.isDisplayed()) {
+            element.selectByAttribute(attribute, value); 
+        } else {
+            super.throw_common_err(locator);
+        }
+    };
+
+    /**
      * @function moveTo
      * @param {string} locator
      */

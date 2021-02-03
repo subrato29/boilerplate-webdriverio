@@ -32,8 +32,6 @@ let genericUtils = {
 	         continue;
 	      }else if(ascending === null) {
 	         ascending = nextArr[i] > arr[i];
-	      }else if (ascending !== nextArr[i] > arr[i]){
-	         return 'unsorted';
 	      };
 	   }
 	   if(ascending === null){
