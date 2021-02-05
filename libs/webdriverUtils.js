@@ -1,5 +1,7 @@
 'use strict';
 
+import maxTimeOut from '../config/config';
+
 module.exports = {
     /**
      * @function findElements
@@ -27,7 +29,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitForDisplayed: function(locator, timeout = 5000) {
+    waitForDisplayed: function(locator, timeout = maxTimeOut.timeout) {
         $(locator).waitForDisplayed({timeout});
     },
 
@@ -37,7 +39,7 @@ module.exports = {
      * @param {string} text 
      * @param {Integer} timeout 
      */
-    waitUntilTextChange: function(locator, text, timeout = 5000) {
+    waitUntilTextChange: function(locator, text, timeout = maxTimeOut.timeout) {
         browser.waitUntil(() => {
             return $(locator).getText() === text;
         }, {
@@ -51,7 +53,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitAndClick: function(locator, timeout = 5000) {
+    waitAndClick: function(locator, timeout = maxTimeOut.timeout) {
         const element = $(locator);
         element.waitForDisplayed({timeout});
         element.click();
