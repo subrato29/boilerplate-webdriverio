@@ -13,7 +13,7 @@ Framework built on
 
 ```
 
-webdriverIO
+webdriverIO (version >= 6.x)
 
 mocha
 
