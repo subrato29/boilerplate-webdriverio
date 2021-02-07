@@ -2,7 +2,6 @@
 
 import basePage from './basePage';
 import urls from '../../config/urls';
-import actions from '../../actions/actionsForWeb';
 
 class CellPhones extends basePage {
     open() {

@@ -67,5 +67,15 @@ module.exports = {
         'Price + Shipping: lowest first',
         'Price + Shipping: highest first',
         'Distance: nearest first'
+      ],
+      subtabs_at_deals_page: [
+        'Featured',
+        'Tech',
+        'Fashion',
+        'Home & Garden',
+        'Sporting Goods',
+        'Automotive',
+        'Other Deals',
+        'Sales & Events'
       ]
 }
