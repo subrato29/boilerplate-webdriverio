@@ -2,7 +2,7 @@ Author: Subrato Sarkar
 ------------------------------
 
 ```
-This is a WebDriverIO(v6) framework to test web application
+This is a WebDriverIO framework to test web application
 
 boilerplate-webdriverio
 
