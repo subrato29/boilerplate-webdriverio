@@ -1,7 +1,15 @@
 'use strict';
 
+import config from '../../config/config.js';
+
 export default class BasePage{
     open(path) {
+        browser.setTimeout({
+            'implicit': config.implicitWait
+        });
+        browser.setTimeout({
+            'pageLoad': config.pageloadTimeout
+        });
         browser.url(path);
     };
 

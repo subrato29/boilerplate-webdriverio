@@ -29,7 +29,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitForDisplayed: function(locator, timeout = maxTimeOut.timeout) {
+    waitForDisplayed: function(locator, timeout = maxTimeOut.explicitTimeout) {
         $(locator).waitForDisplayed({timeout});
     },
 
@@ -39,7 +39,7 @@ module.exports = {
      * @param {string} text 
      * @param {Integer} timeout 
      */
-    waitUntilTextChange: function(locator, text, timeout = maxTimeOut.timeout) {
+    waitUntilTextChange: function(locator, text, timeout = maxTimeOut.explicitTimeout) {
         browser.waitUntil(() => {
             return $(locator).getText() === text;
         }, {
@@ -53,7 +53,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitAndClick: function(locator, timeout = maxTimeOut.timeout) {
+    waitAndClick: function(locator, timeout = maxTimeOut.explicitTimeout) {
         const element = $(locator);
         element.waitForDisplayed({timeout});
         element.click();
