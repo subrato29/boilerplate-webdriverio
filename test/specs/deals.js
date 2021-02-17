@@ -19,6 +19,12 @@ describe('Validation of deals test scenario: ', () => {
         expect(subtabs).to.deep.equal(data.subtabs_at_deals_page);
     });
 
+    it('Validating watches page: ', () => {
+        dealsPage.hover_fashion();
+        webdriverUtils.waitAndClick(dealsPage.watches);
+        webdriverUtils.waitForDisplayed(dealsPage.page_header_watches);
+    });
+
     afterEach(() => {
         dealsPage.tearDown();
     });

@@ -10,12 +10,12 @@ describe('Price verification: ', () => {
         cellPhonePage.open();
     });
 
-    it('Verification of price in lowest to highest: ', () => {
+    it.skip('Verification of price in lowest to highest: ', () => {
         let price_list = webdriverUtils.findElements(cellPhonePage.price);
         expect(genericUtils.determineOrderOfArray(price_list)).to.be.equal('ascending');
     });
 
-    it('Verification of price in highest to lowest: ', () => {
+    it.skip('Verification of price in highest to lowest: ', () => {
         cellPhonePage.open_highest_first();
         let price_list = webdriverUtils.findElements(cellPhonePage.price);
         expect(genericUtils.determineOrderOfArray(price_list)).to.be.equal('descending');
