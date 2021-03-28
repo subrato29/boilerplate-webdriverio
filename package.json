@@ -29,6 +29,7 @@
     "allure-commandline": "^2.13.8",
     "chai": "^4.2.0",
     "chromedriver": "^87.0.0",
-    "wdio-chromedriver-service": "^6.0.4"
+    "wdio-chromedriver-service": "^6.0.4",
+    "@rpii/wdio-html-reporter": "~6.3.2"
   }
 }
