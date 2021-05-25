@@ -60,6 +60,16 @@ module.exports = {
     },
 
     /**
+     * @function waitAndClickable
+     * @param {string} locator 
+     * @param {Integer} timeout 
+     */
+    waitAndClickable: function(locator, timeout = maxTimeOut.explicitTimeout) {
+        const element = $(locator);
+        element.waitForClickable({timeout});
+    },
+
+    /**
      * @function debug
      */
     debug: function() {
