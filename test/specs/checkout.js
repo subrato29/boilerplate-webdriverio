@@ -20,6 +20,7 @@ describe('Add to cart and Checkout flow: ', () => {
         webdriverUtils.waitUntilTextChange(pdtSearchResultPage.get_search_result(), '1');
     });
 
+    /*
     it('Validating a checkout flow: ', () => {
         let expected_tot_item_price = (data.checkout.item_price) * (data.checkout.item_quantity);
         pdtSearchResultPage.set_item_no(data.checkout.item_no);
@@ -44,6 +45,7 @@ describe('Add to cart and Checkout flow: ', () => {
         shoppingCartPage.click_btn_remove();
         webdriverUtils.waitForDisplayed(shoppingCartPage.get_no_item_in_cart());
     });
+    */
 
     afterEach(() => {
         pdtSearchResultPage.tearDown();
