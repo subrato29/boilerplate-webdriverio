@@ -11,14 +11,14 @@ describe('eBay product search: ', () => {
         homePage.open();
     });
 
-    it('Validation of search box: ', () => {    
+    it.skip('Validation of search box: ', () => {    
         homePage.set_value_to_search_box(data.search.product_to_search);
         homePage.click_btn_search();
         let list_of_cat = webdriverUtils.findElements(homePage.get_locator_for_category_list());
         expect(list_of_cat).to.deep.equal(data.product_cat);
     });
 
-    it('Clicking classics after hovering on motor: ', () => {
+    it.skip('Clicking classics after hovering on motor: ', () => {
         homePage.hover_motors();
         webdriverUtils.waitForDisplayed(homePage.get_locator_classics());
         homePage.click_classic_hovering_motors();

@@ -14,14 +14,14 @@ describe('Add to cart and Checkout flow: ', () => {
         pdtSearchResultPage.open();
     });
 
-    it('Validating a single search item by one item no: ', () => {
+    it.skip('Validating a single search item by one item no: ', () => {
         pdtSearchResultPage.set_item_no(data.checkout.item_no);
         homePage.click_btn_search();
         webdriverUtils.waitUntilTextChange(pdtSearchResultPage.get_search_result(), '1');
     });
 
-    /*
-    it('Validating a checkout flow: ', () => {
+    
+    it.skip('Validating a checkout flow: ', () => {
         let expected_tot_item_price = (data.checkout.item_price) * (data.checkout.item_quantity);
         pdtSearchResultPage.set_item_no(data.checkout.item_no);
         homePage.click_btn_search();
@@ -40,12 +40,11 @@ describe('Add to cart and Checkout flow: ', () => {
         expect(expected_tot_item_price).to.be.equal(actual_tot_item_price);
     });
 
-    it('Remove item from shopping cart page: ', () => {
+    it.skip('Remove item from shopping cart page: ', () => {
         shoppingCartPage.open();
         shoppingCartPage.click_btn_remove();
         webdriverUtils.waitForDisplayed(shoppingCartPage.get_no_item_in_cart());
     });
-    */
 
     afterEach(() => {
         pdtSearchResultPage.tearDown();
