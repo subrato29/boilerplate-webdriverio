@@ -6,7 +6,10 @@
   "scripts": {
     "delete": "rm -rf allure-results && rm -rf allure-report",
     "specs": "./node_modules/.bin/wdio --spec",
-    "test": "npm run delete && npm run specs && allure generate allure-results"
+    "reportGenerate": "allure generate allure-results",
+    "reportOpen": "allure open",
+    "e2e": "npm run delete && npm run specs && npm run reportGenerate && npm run reportOpen && npm run reportOpen",
+    "test": "npm run delete && npm run specs && npm run reportGenerate"
   },
   "repository": {
     "type": "git",
