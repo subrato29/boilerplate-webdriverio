@@ -70,3 +70,5 @@ mochawesome-report/
 test-results.xml
 .vscode
 package-lock.json
+allure-report
+allure-results
