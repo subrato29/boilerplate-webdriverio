@@ -14,8 +14,8 @@ describe('eBay product search: ', () => {
     it.skip('Validation of search box: ', () => {    
         homePage.setValueToSearchBox(data.search.productToSearch);
         homePage.clickBtnSearch();
-        let list_of_cat = webdriverUtils.findElements(homePage.categoryList);
-        expect(list_of_cat).to.deep.equal(data.product_cat);
+        let listOfCat = webdriverUtils.findElements(homePage.categoryList);
+        expect(listOfCat).to.deep.equal(data.productCategory);
     });
 
     it.skip('Clicking classics after hovering on motor: ', () => {
@@ -28,7 +28,7 @@ describe('eBay product search: ', () => {
 
     it('Verifying select All categories: ', () => {
         let list = webdriverUtils.findElements(homePage.getListOfElementsAllCategories());
-        expect(list).to.deep.equal(data.all_cat);
+        expect(list).to.deep.equal(data.allCategory);
     });
 
     it('Verify category selected correctly reflected in page: ', () => {

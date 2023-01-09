@@ -4,7 +4,7 @@ module.exports = {
     search: {
         productToSearch: 'Laptop'
     },
-    product_cat: [
+    productCategory: [
       'Computers/Tablets & Networking',
       'Laptops & Netbooks\nSelected category\nPC Laptops & Netbooks\nApple Laptops',
       'Selected category\nPC Laptops & Netbooks',
@@ -16,7 +16,7 @@ module.exports = {
       'Collectibles',
       'Business & Industrial'
     ],
-    all_cat: [
+    allCategory: [
       'All Categories',
       'Antiques',
       'Art',
