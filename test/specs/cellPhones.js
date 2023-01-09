@@ -16,7 +16,7 @@ describe('Price verification: ', () => {
     });
 
     it.skip('Verification of price in highest to lowest: ', () => {
-        cellPhonePage.open_highest_first();
+        cellPhonePage.openHighestFirst();
         let priceList = webdriverUtils.findElements(cellPhonePage.price);
         expect(genericUtils.determineOrderOfArray(priceList)).to.be.equal('descending');
     });

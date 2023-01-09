@@ -13,51 +13,51 @@ class ProductSearchResultPage extends basePage {
         super.tearDown(urls.baseURL);
     };
 
-    get_search_result() {
+    get searchResult() {
         return '//h1[contains(text(), \'result for\')]/span[1]';
     };
 
-    get_product_title() {
+    get productTitle() {
         return '//div[@class = \'srp-river-results clearfix\']//h3[@class = \'s-item__title\']/..';
     };
 
-    get_no_exact_match_found() {
+    get noExactMatchFound() {
         return '//h3[text() = \'No exact matches found\']';
     };
 
-    get_save_this_search() {
+    get saveThisSearch() {
         return '//span[text() = \'Save this search\']/..';
     };
 
-    get_saved_locator() {
+    get saved() {
         return '//span[text() = \'Saved\']/..';
     };
 
-    get_btn_best_match() {
+    get btnBestMatch() {
         return '//button[contains(@aria-label, \'Best Match selected\')]';
     };
 
-    get_best_match_list() {
+    get bestMatchList() {
         return '//a/span[text() = \'Best Match\']/../..//span';
     };
 
-    set_item_no(value) {
+    setItemNo(value) {
         const locator = super.search();
         const element = $(locator);
         if (element.isDisplayed()) {
             element.setValue(value);
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
-    click_product_title() {
-        const locator = this.get_product_title();
+    clickProductTitle() {
+        const locator = this.productTitle;
         actions.doubleClick(locator);
     };
 
-    click_btn_best_match() {
-        const locator = this.get_btn_best_match();
+    clickBtnBestMatch() {
+        const locator = this.btnBestMatch;
         actions.click(locator);
     }
 

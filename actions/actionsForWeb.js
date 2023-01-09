@@ -12,7 +12,7 @@ class ActionsForWeb extends basePage{
         if(element.isDisplayed()) {
             element.click();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
@@ -25,7 +25,7 @@ class ActionsForWeb extends basePage{
         if(element.isDisplayed()) {
             element.doubleClick();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
@@ -39,7 +39,7 @@ class ActionsForWeb extends basePage{
         if(element.isDisplayed()) {
             element.setValue(value);
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
@@ -52,7 +52,7 @@ class ActionsForWeb extends basePage{
         if(element.isDisplayed()) {
             element.setValue('');
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
@@ -66,7 +66,7 @@ class ActionsForWeb extends basePage{
         if (element.isDisplayed()) {
             element.selectByVisibleText(value); 
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
@@ -81,7 +81,7 @@ class ActionsForWeb extends basePage{
         if (element.isDisplayed()) {
             element.selectByAttribute(attribute, value); 
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
@@ -94,7 +94,7 @@ class ActionsForWeb extends basePage{
         if(element.isDisplayed()) {
             element.moveTo();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
@@ -107,7 +107,7 @@ class ActionsForWeb extends basePage{
         if(element.isDisplayed()) {
             return element.getText();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 }

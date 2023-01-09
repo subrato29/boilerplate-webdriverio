@@ -4,53 +4,53 @@ import actions from '../../actions/actionsForWeb';
 import basePage from './basePage';
 
 class ProductDetailPage extends basePage {
-    get_quantity() {
+    get quantity() {
         return '//input[@class = \'qtyInput\']';
     };
 
-    get_add_to_cart() {
+    get addToCart() {
         return '//a[contains(text(), \'Add to cart\')]'
     };
 
-    get_no_thanks() {
+    get noThanks() {
         return '//button[text() = \'No thanks\']';
     };
 
-    get_price_locator() {
+    get price() {
         return '//div[@class = \'item-price\']/span/span/span';
     };
 
-    get_btn_checkout_locator() {
+    get btnCheckout() {
         return '//button[text() = \'Go to checkout\']';
     };
 
-    get_btn_continue_as_guest() {
+    get continueAsGuest() {
         return '//button[text() = \'Continue as guest\']';
     };
 
-    set_quantity(value) {
-        const locator = this.get_quantity();
+    setQuantity(value) {
+        const locator = this.quantity;
         actions.clear(locator);
         actions.setValue(locator, value);
     };
 
-    click_add_to_cart() {
-        const locator = this.get_add_to_cart();
+    clickAddToCart() {
+        const locator = this.addToCart;
         actions.click(locator);
     };
 
-    click_no_thanks() {
-        const locator = this.get_no_thanks();
+    clickNoThanks() {
+        const locator = this.noThanks;
         actions.click(locator);
     };
 
-    get_item_price() {
-        const locator = this.get_price_locator();
+    getItemPrice() {
+        const locator = this.price;
         return actions.getText(locator);
     };
 
-    click_btn_checkout() {
-        const locator = this.get_btn_checkout_locator();
+    clickBtnCheckout() {
+        const locator = this.btnCheckout;
         actions.click(locator);
     };
 }

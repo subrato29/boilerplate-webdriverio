@@ -21,11 +21,11 @@ export default class BasePage{
         return '//input[@placeholder = \'Search for anything\']';
     };
 
-    btn_search() {
+    btnSearch() {
         return '//input[@value = \'Search\']';
     };
 
-    throw_common_err(locator) {
+    throwCommonErr(locator) {
         throw new Error(locator + ' element is not present in DOM search page');
     }
 }

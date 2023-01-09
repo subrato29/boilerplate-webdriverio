@@ -5,11 +5,11 @@ import urls from '../../config/urls';
 
 class CellPhones extends basePage {
     open() {
-        super.open(urls.cell_phones_lowest_first);
+        super.open(urls.cellPhonesLowestFirst);
     };
 
-    open_highest_first() {
-        super.open(urls.cell_phones_highest_first)
+    openHighestFirst() {
+        super.open(urls.cellPhonesHighestFirst)
     }
 
     tearDown() {
@@ -20,7 +20,7 @@ class CellPhones extends basePage {
         return '//span[@itemprop = \'price\']';
     };
 
-    get show_feature_items() {
+    get showFeatureItems() {
         return '//button[@aria-label = \'Show featured items\']';
     };
 }

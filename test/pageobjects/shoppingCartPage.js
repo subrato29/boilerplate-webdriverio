@@ -9,25 +9,25 @@ class ShoppingCartPage extends basePage {
         super.open(urls.cart);
     };
 
-    get_order_tot_locator() {
+    get orderTotal() {
         return '//span[text() = \'Order total\']/../..//span[@class = \'text-display\']/span';
     };
 
-    get_order_total() {
-        const locator = this.get_order_tot_locator();
+    getOrderTotal() {
+        const locator = this.orderTotal;
         return actions.getText(locator);
     };
 
-    get_btn_remove() {
+    get btnRemove() {
         return '//button[@data-test-id = \'cart-remove-item\']';
     }
 
-    get_no_item_in_cart() {
+    get noItemInCart() {
         return '//span[text() = "You don\'t have any items in your cart."]';
     }
 
-    click_btn_remove() {
-        const locator = this.get_btn_remove();
+    clickBtnRemove() {
+        const locator = this.btnRemove();
         actions.click(locator);
     }
 }

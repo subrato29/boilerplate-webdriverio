@@ -11,18 +11,18 @@ describe('Validation of deals test scenario: ', () => {
     });
 
     it('Validation of deals page header:', () => {
-        webdriverUtils.waitForDisplayed(dealsPage.header_deals_page);
+        webdriverUtils.waitForDisplayed(dealsPage.headerDealsPage);
     });
 
     it('Validating subtabs of deals page: ', () => {
         let subtabs = webdriverUtils.findElements(dealsPage.subtabs);
-        expect(subtabs).to.deep.equal(data.subtabs_at_deals_page);
+        expect(subtabs).to.deep.equal(data.subtabsAtDealsPage);
     });
 
     it('Validating watches page: ', () => {
-        dealsPage.hover_fashion();
+        dealsPage.hoverFashion();
         webdriverUtils.waitAndClick(dealsPage.watches);
-        webdriverUtils.waitForDisplayed(dealsPage.page_header_watches);
+        webdriverUtils.waitForDisplayed(dealsPage.pageHeaderWatches);
     });
 
     afterEach(() => {

@@ -2,7 +2,7 @@
 
 module.exports = {
     search: {
-        product_to_search: 'Laptop'
+        productToSearch: 'Laptop'
     },
     product_cat: [
       'Computers/Tablets & Networking',
@@ -54,14 +54,14 @@ module.exports = {
       'Video Games & Consoles',
       'Everything Else'
     ],
-    category_selected: 'Real Estate',
+    categorySelected: 'Real Estate',
     checkout: {
         item_no: '151744607899',
         item_quantity: 3,
         item_price: 228
     },
-    best_match_types: [ 'Best Match' ],
-    subtabs_at_deals_page: [
+    bestMatchTypes: [ 'Best Match' ],
+    subtabsAtDealsPage: [
       'Featured',
       'Tech',
       'Fashion',

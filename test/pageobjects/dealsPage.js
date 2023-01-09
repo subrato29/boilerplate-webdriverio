@@ -13,7 +13,7 @@ class DealsPage extends basePage {
         super.tearDown(urls.baseURL);
     }
 
-    get header_deals_page() {
+    get headerDealsPage() {
         return '//a[text() = \'Deals\']';
     };
 
@@ -29,11 +29,11 @@ class DealsPage extends basePage {
         return '//a[text() = \'Watches\'][contains(@class, \'navigation-desktop\')]';
     };
 
-    get page_header_watches() {
+    get pageHeaderWatches() {
         return '//span[text() = \'Watches\']';
     }
     
-    hover_fashion() {
+    hoverFashion() {
         const locator = this.fashion;
         actions.moveTo(locator);
     }

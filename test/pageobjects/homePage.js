@@ -12,15 +12,15 @@ class HomePage extends basePage{
         super.tearDown(urls.baseURL);
     }
 
-    get_locator_for_category_list() {
+    get categoryList() {
         return '//h3[text() = \'Category\']/../..//li//li[@data-scope = \'PRIMARY\']';
     };
 
-    get_locator_classics() {
+    get classics() {
         return '//a[text() = \'Classics\']';
     };
 
-    get_list_of_elements_all_categories() {
+    getListOfElementsAllCategories() {
         return '//select[@aria-label = \'Select a category for search\']/option';
     };
 
@@ -28,63 +28,63 @@ class HomePage extends basePage{
         return '//h1/span[text() = \'Classic Cars\']';
     };
 
-    set_value_to_search_box(value) {
+    setValueToSearchBox(value) {
         const locator = super.search();
         const element = $(locator);
         if (element.isDisplayed()) {
             element.setValue(value);
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
-    click_btn_search() {
-        const locator = super.btn_search();
+    clickBtnSearch() {
+        const locator = super.btnSearch();
         const element = $(locator);
         if (element.isDisplayed()) {
             element.click();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
-    hover_motors() {
+    hoverMotors() {
         const locator = '//span[text() = \'Home\']/../..//li/a[text() = \'Motors\']'
         const element = $(locator);
         if(element.isDisplayed()) {
             element.moveTo();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
-    click_classic_hovering_motors() {
-        const locator = this.get_locator_classics();;
+    clickClassicHoveringMotors() {
+        const locator = this.classics;;
         const element = $(locator);
         if (element.isDisplayed()) {
             element.click();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
-    get_text_classic_car() {
+    getTextClassicCar() {
         const locator = this.get_locator_classic_car_page_header();
         const element = $(locator);
         if (element.isDisplayed()) {
             return element.getText();
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 
-    select_category(value) {
+    selectCategory(value) {
         const locator = '//select[@aria-label = \'Select a category for search\']';
         const element = $(locator);
         if (element.isDisplayed()) {
             element.selectByVisibleText(value); 
         } else {
-            super.throw_common_err(locator);
+            super.throwCommonErr(locator);
         }
     };
 }
