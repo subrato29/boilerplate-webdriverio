@@ -22,7 +22,7 @@ describe('eBay product search: ', () => {
         homePage.hoverMotors();
         webdriverUtils.waitForDisplayed(homePage.classics);
         homePage.clickClassicHoveringMotors();
-        webdriverUtils.waitUntilTextChange(homePage.get_locator_classic_car_page_header(),
+        webdriverUtils.waitUntilTextChange(homePage.classicCarPageHeader,
         'Classic Cars', 2000);
     });
 

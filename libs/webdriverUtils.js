@@ -8,7 +8,7 @@ module.exports = {
      * @param {string} locator
      * @returns array 
      */
-    findElements: function(locator) {
+    findElements: (locator) => {
         let array = [];
         $$(locator).map((element) => {
             array.push(element.getText());
@@ -20,7 +20,7 @@ module.exports = {
      * @function pause
      * @param {Integer} timeout 
      */
-    pause: function(timeout) {
+    pause: (timeout) => {
         browser.pause(timeout);
     },
 
@@ -29,7 +29,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitForDisplayed: function(locator, timeout = maxTimeOut.explicitTimeout) {
+    waitForDisplayed: (locator, timeout = maxTimeOut.explicitTimeout) => {
         $(locator).waitForDisplayed({timeout});
     },
 
@@ -39,7 +39,7 @@ module.exports = {
      * @param {string} text 
      * @param {Integer} timeout 
      */
-    waitUntilTextChange: function(locator, text, timeout = maxTimeOut.explicitTimeout) {
+    waitUntilTextChange: (locator, text, timeout = maxTimeOut.explicitTimeout) => {
         browser.waitUntil(() => {
             return $(locator).getText() === text;
         }, {
@@ -53,7 +53,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitAndClick: function(locator, timeout = maxTimeOut.explicitTimeout) {
+    waitAndClick: (locator, timeout = maxTimeOut.explicitTimeout) => {
         const element = $(locator);
         element.waitForDisplayed({timeout});
         element.click();
@@ -64,7 +64,7 @@ module.exports = {
      * @param {string} locator 
      * @param {Integer} timeout 
      */
-    waitAndClickable: function(locator, timeout = maxTimeOut.explicitTimeout) {
+    waitAndClickable: (locator, timeout = maxTimeOut.explicitTimeout) => {
         const element = $(locator);
         element.waitForClickable({timeout});
     },
@@ -72,7 +72,7 @@ module.exports = {
     /**
      * @function debug
      */
-    debug: function() {
+    debug: () => {
         browser.debug();
     }
 }

@@ -24,7 +24,7 @@ class HomePage extends basePage{
         return '//select[@aria-label = \'Select a category for search\']/option';
     };
 
-    get_locator_classic_car_page_header () {
+    get classicCarPageHeader () {
         return '//h1/span[text() = \'Classic Cars\']';
     };
 
@@ -69,7 +69,7 @@ class HomePage extends basePage{
     };
 
     getTextClassicCar() {
-        const locator = this.get_locator_classic_car_page_header();
+        const locator = this.classicCarPageHeader;
         const element = $(locator);
         if (element.isDisplayed()) {
             return element.getText();
