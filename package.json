@@ -34,7 +34,7 @@
     "@wdio/sync": "^6.11.0",
     "allure-commandline": "^2.13.8",
     "chai": "^4.2.0",
-    "chromedriver": "^87.0.0",
+    "chromedriver": "^109.0.0",
     "wdio-chromedriver-service": "^6.0.4"
   }
 }
