@@ -72,3 +72,4 @@ test-results.xml
 package-lock.json
 allure-report
 allure-results
+driver-logs/
