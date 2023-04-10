@@ -1,28 +1,28 @@
-'use strict';
+'use strict'
 
-import basePage from './basePage';
-import urls from '../../config/urls';
+import basePage from './basePage'
+import urls from '../../config/urls'
 
 class CellPhones extends basePage {
-    open() {
-        super.open(urls.cellPhonesLowestFirst);
-    };
+  open() {
+    super.open(urls.cellPhonesLowestFirst)
+  }
 
-    openHighestFirst() {
-        super.open(urls.cellPhonesHighestFirst)
-    }
+  openHighestFirst() {
+    super.open(urls.cellPhonesHighestFirst)
+  }
 
-    tearDown() {
-        super.tearDown(urls.baseURL);
-    };
+  tearDown() {
+    super.tearDown(urls.baseURL)
+  }
 
-    get price() {
-        return '//span[@itemprop = \'price\']';
-    };
+  get price() {
+    return "//span[@itemprop = 'price']"
+  }
 
-    get showFeatureItems() {
-        return '//button[@aria-label = \'Show featured items\']';
-    };
+  get showFeatureItems() {
+    return "//button[@aria-label = 'Show featured items']"
+  }
 }
 
-export default new CellPhones();
+export default new CellPhones()

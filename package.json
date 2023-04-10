@@ -9,7 +9,8 @@
     "reportGenerate": "allure generate allure-results",
     "reportOpen": "allure open",
     "e2e": "npm run delete && npm run specs && npm run reportGenerate && npm run reportOpen && npm run reportOpen",
-    "test": "npm run delete && npm run specs && npm run reportGenerate"
+    "test": "npm run delete && npm run specs && npm run reportGenerate",
+    "pretty": "prettier --write \"**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "allure-commandline": "^2.13.8",
     "chai": "^4.2.0",
     "chromedriver": "^109.0.0",
-    "wdio-chromedriver-service": "^6.0.4"
+    "wdio-chromedriver-service": "^6.0.4",
+    "prettier": "2.8.7"
   }
 }
