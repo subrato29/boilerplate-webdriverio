@@ -22,11 +22,17 @@ describe('eBay product search: ', () => {
     homePage.hoverMotors()
     webdriverUtils.waitForDisplayed(homePage.classics)
     homePage.clickClassicHoveringMotors()
-    webdriverUtils.waitUntilTextChange(homePage.classicCarPageHeader, 'Classic Cars', 2000)
+    webdriverUtils.waitUntilTextChange(
+      homePage.classicCarPageHeader,
+      'Classic Cars',
+      2000,
+    )
   })
 
   it('Verifying select All categories: ', () => {
-    let list = webdriverUtils.findElements(homePage.getListOfElementsAllCategories())
+    let list = webdriverUtils.findElements(
+      homePage.getListOfElementsAllCategories(),
+    )
     expect(list).to.deep.equal(data.allCategory)
   })
 

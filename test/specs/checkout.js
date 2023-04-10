@@ -21,7 +21,8 @@ describe('Add to cart and Checkout flow: ', () => {
   })
 
   it.skip('Validating a checkout flow: ', () => {
-    let expectedTotItemPrice = data.checkout.item_price * data.checkout.item_quantity
+    let expectedTotItemPrice =
+      data.checkout.item_price * data.checkout.item_quantity
     pdtSearchResultPage.setItemNo(data.checkout.item_no)
     homePage.clickBtnSearch()
     webdriverUtils.waitForDisplayed(pdtSearchResultPage.productTitle)
@@ -31,11 +32,17 @@ describe('Add to cart and Checkout flow: ', () => {
     pdtDetailPage.clickAddToCart()
     pdtDetailPage.clickNoThanks()
     webdriverUtils.waitForDisplayed(pdtDetailPage.price)
-    let actualTotItemPrice = genericUtils.getPrice(pdtDetailPage.getItemPrice(), '$')
+    let actualTotItemPrice = genericUtils.getPrice(
+      pdtDetailPage.getItemPrice(),
+      '$',
+    )
     expect(expectedTotItemPrice).to.be.equal(actualTotItemPrice)
     pdtDetailPage.clickBtnCheckout()
     webdriverUtils.waitAndClick(pdtDetailPage.continueAsGuest)
-    actualTotItemPrice = genericUtils.getPrice(shoppingCartPage.getOrderTotal(), '$')
+    actualTotItemPrice = genericUtils.getPrice(
+      shoppingCartPage.getOrderTotal(),
+      '$',
+    )
     expect(expectedTotItemPrice).to.be.equal(actualTotItemPrice)
   })
 

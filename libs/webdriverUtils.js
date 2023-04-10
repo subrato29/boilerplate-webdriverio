@@ -39,14 +39,19 @@ module.exports = {
    * @param {string} text
    * @param {Integer} timeout
    */
-  waitUntilTextChange: (locator, text, timeout = maxTimeOut.explicitTimeout) => {
+  waitUntilTextChange: (
+    locator,
+    text,
+    timeout = maxTimeOut.explicitTimeout,
+  ) => {
     browser.waitUntil(
       () => {
         return $(locator).getText() === text
       },
       {
         timeout,
-        timeoutMsg: 'Timeout for the locator: ' + locator + ' where the text is: ' + text,
+        timeoutMsg:
+          'Timeout for the locator: ' + locator + ' where the text is: ' + text,
       },
     )
   },
